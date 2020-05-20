@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过滤器</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p> {{msg | msgFormat}}</p>
+    </div>
+
+    <script>
+
+        Vue.filter('msgFormat', function(msg){  
+          return  msg.replace(/婧婧/g,'邪恶')
+        })
+
+
+        var vm = new Vue({
+            el: '#app',
+           
+            data:{
+                msg:'婧婧 是 婧婧 哈哈哈哈 才怪 是婧婧'
+            },
+            methods:{
+
+            }
+        })
+
+        
+    </script>
+    
+</body>
+</html>
