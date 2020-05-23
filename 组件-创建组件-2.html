@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>v-if,v-show</title>
+	<script src="./vue.js" type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<div id="app">
+        <!-- 还是使用标签形式，引入自己的 -->
+		<mycom2></mycom2>
+	</div>
+	
+	<script>
+        Vue.component('mycom2',{
+            template: '<h3>这是直接使用Vue.component创建出来的组件<span>123</span></h3>'
+            
+        })
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				
+			},
+			methods:{
+				
+			}
+		})
+	</script>
+</body>
+</html>
+
