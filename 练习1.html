@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <p v-if="hours <12">早上好</p>
+    <p v-if="hours >=12 && hours <18">中午好</p>
+    <p v-if="hours >18">晚上好</p>
+  </div>
+
+
+  <!-- <script src="https://unpkg.com/vue"></script> -->
+  <!-- <script>
+    var hours = new Date().getHours();
+
+    new Vue({
+      el:'#app',
+      data:{
+        isMorning: hours < 12,
+        isEvening: hours >=12 && hours < 18,
+        isAfternoon: hours >= 18
+      }
+    });
+  </script> -->
+  <script>
+    new Vue({
+      el:'#app',
+      data: {
+        hours: new Date().getHours()
+      }
+    });
+  </script>
+</body>
+</html>

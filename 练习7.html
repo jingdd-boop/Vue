@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="inputValue">
+    <p>五秒钟之后，显示输入的"{{oldInputValue}}"</p>
+  </div>
+  <script>
+    new Vue({
+      el:'#app',
+      data:{
+        inputValue:'',
+        oldInputValue: ''
+      },
+      watch: {
+        inputValue() {
+          const newValue = this.inputValue;
+          
+          setTimeout(() => {
+            this.oldInputValue = newValue;
+          }, 5000); 
+       
+        }
+      }
+      
+    });
+  </script>
+</body>
+</html>
