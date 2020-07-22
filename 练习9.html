@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <color-preview color="red">1</color-preview>
+    <color-preview color="blue">2</color-preview>
+  </div>
+  <script>
+    Vue.component('color-preview',{
+      template:'<div class="color-preview" :style="style"></div>',
+      props:['color'],
+      computed:{
+        style() {
+          return {
+            backgroundColor:this.color
+          };
+        }
+      }
+    });
+    new Vue({
+      el:'#app',
+      
+    });
+  </script>
+</body>
+</html>
